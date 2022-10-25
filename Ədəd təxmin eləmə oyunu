@@ -1,0 +1,28 @@
+from random import randint
+oyun_davam=True
+while oyun_davam:
+    eded = randint(1, 101)
+    haqq=8
+    while True:
+        texmin_eded=int(input("Ədəd təxmin edin(1-100 arasında):"))
+        if texmin_eded==eded:
+            print("Təbriklər oyunu qazandınız!")
+            break
+        else:
+            haqq-=1
+            if haqq<=0:
+                print("Təəssüf ki ədədi tapa bilmədiniz!")
+                print("Ədəd-{} idi".format(eded))
+                break
+            else:
+                if texmin_eded<eded:
+                    print("Daha böyük ədəd daxil edin!")
+                    print("{} haqqınız qaldı!".format(haqq))
+                if texmin_eded>eded:
+                    print("Daha kiçik ədəd daxil edin!")
+                    print("{} haqqınız qaldı!".format(haqq))
+    sual=input("Oyuna davam etmək istəyirsiniz(Bəli/Xeyr)?:")
+    if sual=="Xeyr" or sual=="xeyr":
+        oyun_davam=False
+    if sual=="Bəli" or sual=="Beli":
+        oyun_davam=True
